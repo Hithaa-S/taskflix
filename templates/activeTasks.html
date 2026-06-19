@@ -1,0 +1,32 @@
+<div class="container mt-4">
+
+    <h2>Active Tasks</h2>
+
+    <div class="task-card"
+         ng-repeat="task in tasks"
+         ng-if="!task.completed">
+
+        <h4>{{task.title}}</h4>
+
+        <p>Category: {{task.category}}</p>
+
+        <p class="{{task.priority}}">
+            {{task.priority}}
+        </p>
+
+        <p>
+            Due:
+            {{task.dueDate}}
+        </p>
+
+        <button
+            class="btn btn-success"
+            ng-click="toggleTask(task)">
+
+            Complete
+
+        </button>
+
+    </div>
+
+</div>

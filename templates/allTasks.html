@@ -1,0 +1,122 @@
+<div class="hero">
+
+    <div class="overlay">
+
+        <h1>
+            Welcome To TaskFlix
+        </h1>
+
+        <p>
+            Complete Tasks.
+            Build Consistency.
+        </p>
+
+    </div>
+
+</div>
+
+<div class="container mt-4">
+
+<form
+ng-submit="addTask()">
+
+<input
+class="form-control mb-2"
+type="text"
+placeholder="Task Name"
+ng-model="newTask.title"
+required>
+
+<select
+class="form-control mb-2"
+ng-model="newTask.category">
+
+<option>Work</option>
+<option>Study</option>
+<option>Personal</option>
+<option>Shopping</option>
+
+</select>
+
+<select
+class="form-control mb-2"
+ng-model="newTask.priority">
+
+<option>High</option>
+<option>Medium</option>
+<option>Low</option>
+
+</select>
+
+<input
+class="form-control mb-2"
+type="date"
+ng-model="newTask.dueDate">
+
+<button
+class="btn btn-danger">
+
+Add Task
+
+</button>
+
+</form>
+
+</div>
+
+<div class="container">
+
+<div
+class="task-card"
+
+ng-repeat=
+"task in tasks">
+
+<h4>
+{{task.title}}
+</h4>
+
+<p>
+{{task.category}}
+</p>
+
+<p
+class="{{task.priority}}">
+
+{{task.priority}}
+
+</p>
+
+<button
+class="btn btn-success"
+
+ng-click=
+"toggleTask(task)">
+
+Complete
+
+</button>
+
+<button
+class="btn btn-danger"
+
+ng-click=
+"deleteTask(task.id)">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+<div
+class="reward-zone"
+
+ng-if=
+"showReward">
+
+🎉 Task Completed On Time!
+
+</div>

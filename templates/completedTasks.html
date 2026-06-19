@@ -1,0 +1,31 @@
+<div class="container mt-4">
+
+    <h2>Completed Tasks</h2>
+
+    <div class="task-card"
+         ng-repeat="task in tasks"
+         ng-if="task.completed">
+
+        <h4>
+            {{task.title}}
+        </h4>
+
+        <p>
+            {{task.category}}
+        </p>
+
+        <p class="{{task.priority}}">
+            {{task.priority}}
+        </p>
+
+        <button
+            class="btn btn-warning"
+            ng-click="toggleTask(task)">
+
+            Mark Active
+
+        </button>
+
+    </div>
+
+</div>
